@@ -1,0 +1,63 @@
+// ------ Colors ------ //
+// scss-docs-start color-functions
+// Tint a color: mix a color with white
+@function tint-color($color, $weight) {
+  @return mix(white, $color, $weight);
+}
+
+// brand colors
+
+$brand_cyan: #33cccc;
+$brand_blue: #5f7991;
+$brand_grey: #f8fafc;
+
+$black: #000f29;
+$black-soft: #000816;
+$black-mute: #27344a;
+$grey-900: #14223a;
+$grey-800: $black-mute;
+$grey-700: #3b465a;
+$grey-600: #4f596b;
+$grey-500: #626b7b;
+$grey-400: #767e8c;
+$grey-300: #89909c;
+$grey-200: #9da3ad;
+$grey-100: #dae2ec;
+$grey-75: #c4c8ce;
+$grey-50: #d8dade;
+$grey-25: #f8fafc;
+
+$white: #ffffff;
+$white-soft: $grey-25;
+$white-mute: #f2f2f2;
+
+$body-background: $white;
+$background-color-soft: $white-soft;
+$heading-color: $grey-700;
+$text-color: $grey-700;
+
+//dark mode
+$body-background-dark: $black-soft;
+$text-color-dark: $grey-100;
+$background-color-soft-dark: $black-mute;
+$heading-color-dark: $grey-200;
+
+$section-gap: 160px;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+) !default;
+
+$default-transition: 1s ease all;
+$default-container-width: map-get($grid-breakpoints, xl);
+$border-radius-default: 20px;
+$default-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+//buttons
+$button-default-radius: 5px;
+$button-big-radius: 5px;
+$button-small-radius: 2px;

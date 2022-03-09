@@ -1,0 +1,41 @@
+// 576px
+@media all and (min-width: map-get($grid-breakpoints, sm)) {
+  .container {
+    width: map-get($grid-breakpoints, sm);
+  }
+  .page-header {
+    max-width: 100%;
+  }
+}
+// 768px
+@media all and (min-width: map-get($grid-breakpoints, md)) {
+  .container {
+    width: map-get($grid-breakpoints, md);
+  }
+  .page-header {
+    max-width: 80%;
+  }
+}
+// 992px
+@media all and (min-width: map-get($grid-breakpoints, xl)) {
+  body {
+    display: flex;
+    align-items: flex-start;
+  }
+  #app {
+    display: flex;
+    flex-direction: column;
+    padding: 0 2rem;
+  }
+
+  nav {
+    text-align: left;
+    margin-left: -1rem;
+    font-size: 1rem;
+    padding: 1rem 0;
+    margin-top: 1rem;
+  }
+  .page-header {
+    max-width: 70%;
+  }
+}

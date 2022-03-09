@@ -1,0 +1,177 @@
+@import url("https://fonts.googleapis.com/css2?family=Sen:wght@400;700;800&display=swap");
+@import "./mixins";
+@import "./variables";
+@import "./grid";
+@include cssvars(
+  (
+    color-cyan: $brand-cyan,
+    color-blue: $brand-blue,
+    color-grey: $brand-grey,
+    color-white: $white,
+    color-white-soft: $white-soft,
+    color-white-mute: $white-mute,
+    color-black: $black,
+    color-black-soft: $black-soft,
+    color-black-mute: $black-mute,
+    grey-900: $grey-900,
+    grey-800: $grey-800,
+    grey-700: $grey-700,
+    grey-600: $grey-600,
+    grey-500: $grey-500,
+    grey-400: $grey-400,
+    grey-300: $grey-300,
+    grey-200: $grey-200,
+    grey-100: $grey-100,
+    grey-75: $grey-75,
+    grey-50: $grey-50,
+    grey-25: $grey-25,
+    body-background: $body-background,
+    text-color: $text-color,
+    background-color-soft: $background-color-soft,
+    heading-color: $heading-color,
+    section-gap: $section-gap,
+  )
+);
+
+.dark-mode {
+  @include cvover(
+    (
+      body-background: $body-background-dark,
+      text-color: $text-color-dark,
+      background-color-soft: $background-color-soft-dark,
+      heading-color: $heading-color-dark,
+      color-white: $black,
+      color-white-mute: $black-mute,
+      color-black-mute: $white-mute,
+      color-black-soft: $white-soft,
+      grey-900: $grey-25,
+      grey-800: $grey-75,
+      grey-700: $grey-50,
+      grey-600: $grey-100,
+      grey-500: $grey-200,
+      grey-400: $grey-300,
+      grey-300: $grey-400,
+      grey-200: $grey-500,
+      grey-100: $grey-600,
+      grey-75: $grey-700,
+      grey-50: $grey-800,
+      grey-25: $grey-900,
+    )
+  );
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  position: relative;
+  font-weight: normal;
+}
+
+body {
+  min-height: 100vh;
+  color: cv("text-color");
+  background: cv("body-background");
+
+  transition: color 0.5s, background-color 0.5s;
+  line-height: 1.6;
+  font-family: Sen, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  font-size: 15px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: greyscale;
+}
+h1,
+h2,
+h3 {
+  font-weight: 800;
+}
+h4,
+h5,
+h6 {
+  font-weight: 700;
+}
+a,
+button {
+  transition: $default-transition;
+  cursor: pointer;
+}
+.container {
+  width: $default-container-width;
+}
+.container-lg {
+  width: map-get($grid-breakpoints, lg);
+}
+.button {
+  border: none;
+  background: cv("color-black-mute");
+  color: cv("color-white-mute");
+  padding: 0.5em 1em;
+  font-weight: bold;
+  text-align: center;
+  border-radius: $button-default-radius;
+  &:hover {
+    background: cv("color-black-soft");
+  }
+  &.button-primary {
+    background: cv("color-cyan");
+    color: cv("color-black-soft");
+    &:hover {
+      background: cv("color-black-soft");
+      color: cv("color-white-mute");
+    }
+  }
+  &.button-big {
+    padding: 0.7em 1.5em;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    border-radius: $button-big-radius;
+  }
+}
+.m1 {
+  margin: 1em;
+}
+.m2 {
+  margin: 2em;
+}
+.mtb1 {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+.mtb2 {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.mt1 {
+  margin-top: 1em;
+}
+.mt2 {
+  margin-top: 2em;
+}
+
+.mb1 {
+  margin-bottom: 1em;
+}
+.mb2 {
+  margin-bottom: 2em;
+}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+.fillparent {
+  width: 100%;
+}
+.flex {
+  display: flex;
+  flex-direction: row;
+  .fill {
+    flex-grow: 1;
+  }
+}

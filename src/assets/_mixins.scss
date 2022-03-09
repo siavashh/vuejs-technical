@@ -1,0 +1,33 @@
+@mixin cssvars($css_variables, $prefix: theme) {
+  :root {
+    @each $name, $value in $css_variables {
+      --#{$prefix}-#{$name}: #{$value};
+    }
+  }
+}
+@mixin cvover($css_variables, $prefix: theme) {
+  @each $name, $value in $css_variables {
+    --#{$prefix}-#{$name}: #{$value};
+  }
+}
+
+@function cv($name, $prefix: theme) {
+  @return var(--#{$prefix}-#{$name});
+}
+
+@mixin card(
+  $padding: 2em,
+  $background: $white,
+  $margin: 0,
+  $radius: $border-radius-default,
+  $shadow: $default-box-shadow,
+  $borderColor: $black-mute,
+  $borderWidth: 1px
+) {
+  padding: $padding;
+  background: $background;
+  margin: $margin;
+  border-radius: $radius;
+  box-shadow: $shadow;
+  border: $borderWidth solid $borderColor;
+}
